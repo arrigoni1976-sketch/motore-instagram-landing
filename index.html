@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motore Instagram — pubblicazione automatica per il tuo profilo</title>
+<meta name="description" content="Il tuo Instagram si aggiorna da solo: didascalie scritte su misura e pubblicazione automatica, ogni settimana, negli orari che scegli tu.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sand: #f3ecdd;
+    --sand-deep: #e6d9bf;
+    --sand-line: #d8c8a4;
+    --ink: #26323c;
+    --ink-soft: #5c6d77;
+    --blue: #3e6b85;
+    --blue-deep: #24404f;
+    --blue-soft: #6f97ab;
+    --card: #faf6ec;
+    --whatsapp: #25d366;
+    --whatsapp-ink: #0c3d22;
+    --shadow: 38, 30, 14;
+    --band-bg: #24404f;
+    --band-ink: #f3ecdd;
+    --band-ink-soft: rgba(243, 236, 221, 0.72);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sand: #1c2530;
+      --sand-deep: #141b24;
+      --sand-line: #33404c;
+      --ink: #ede4d2;
+      --ink-soft: #a7b3bb;
+      --blue: #86b3c9;
+      --blue-deep: #cfe2ea;
+      --blue-soft: #4f7185;
+      --card: #212b37;
+      --whatsapp: #2fe07a;
+      --whatsapp-ink: #06210f;
+      --shadow: 0, 0, 0;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --sand: #1c2530;
+    --sand-deep: #141b24;
+    --sand-line: #33404c;
+    --ink: #ede4d2;
+    --ink-soft: #a7b3bb;
+    --blue: #86b3c9;
+    --blue-deep: #cfe2ea;
+    --blue-soft: #4f7185;
+    --card: #212b37;
+    --whatsapp: #2fe07a;
+    --whatsapp-ink: #06210f;
+    --shadow: 0, 0, 0;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--sand);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(var(--shadow), 0.05) 1px, transparent 0);
+    background-size: 22px 22px;
+    color: var(--ink);
+    font-family: "Work Sans", system-ui, sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .price {
+    font-family: "Fraunces", Georgia, serif;
+    text-wrap: balance;
+    color: var(--blue-deep);
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  /* ---------- nav ---------- */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 28px;
+    padding-bottom: 8px;
+  }
+  .brand {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4em;
+  }
+  .brand small {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .nav-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--blue-deep);
+    border-bottom: 1.5px solid var(--blue-soft);
+    padding-bottom: 2px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 62ch;
+    padding: clamp(44px, 9vw, 108px) 0 clamp(52px, 8vw, 104px);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--whatsapp);
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.22);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--blue);
+  }
+
+  .hero p.lede {
+    margin-top: 20px;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--whatsapp);
+    color: var(--whatsapp-ink);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 9px 17px;
+    border-radius: 100px;
+    box-shadow: 0 10px 22px -10px rgba(37, 211, 102, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-whatsapp:hover { transform: translateY(-1px); box-shadow: 0 14px 26px -10px rgba(37, 211, 102, 0.6); }
+  .btn-whatsapp:focus-visible { outline: 2px solid var(--blue-deep); outline-offset: 3px; }
+  .btn-whatsapp svg { width: 15px; height: 15px; flex: none; }
+
+  .hero-note {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- section shell ---------- */
+  section { padding: clamp(40px, 6vw, 76px) 0; }
+  .section-head { max-width: 60ch; margin-bottom: clamp(28px, 4vw, 44px); }
+  .kicker {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 10px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    font-weight: 600;
+  }
+  .section-head p {
+    margin-top: 12px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  /* ---------- how it works ---------- */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    counter-reset: step;
+  }
+  @media (max-width: 780px) { .steps { grid-template-columns: 1fr; } }
+
+  .step {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 18px 4px 18px;
+    padding: 26px 24px 24px;
+    position: relative;
+  }
+  .step .num {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: var(--blue-soft);
+    line-height: 1;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .step h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 8px; }
+  .step p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* ---------- pricing ---------- */
+  .ladder {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 6px 4px 18px;
+    scroll-snap-type: x proximity;
+  }
+  .tier {
+    scroll-snap-align: start;
+    flex: 1 1 118px;
+    min-width: 118px;
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 16px 4px 4px;
+    padding: 16px 14px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+  }
+  .tier .bar {
+    height: 6px;
+    width: 100%;
+    border-radius: 3px;
+    background: var(--sand-line);
+    overflow: hidden;
+  }
+  .tier .bar > span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue-soft), var(--blue));
+    width: var(--fill);
+  }
+  .tier .freq {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .tier .freq b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tier .price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--blue-deep);
+  }
+  .tier .price sup { font-size: 0.85rem; font-weight: 500; margin-left: 2px; }
+  .tier .per { font-size: 0.72rem; color: var(--ink-soft); margin-top: -8px; }
+  .tier.reco { border-color: var(--blue); background: linear-gradient(180deg, var(--card), var(--sand-deep)); }
+  .tier .flag {
+    position: absolute;
+    top: -11px; right: 10px;
+    background: var(--blue);
+    color: var(--card);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 100px;
+  }
+  .ladder-note {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  /* ---------- includes ---------- */
+  .includes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px 28px;
+    margin-top: 8px;
+  }
+  .inc {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.95rem;
+  }
+  .inc svg { flex: none; width: 19px; height: 19px; margin-top: 2px; color: var(--blue); }
+  .inc b { display: block; color: var(--ink); font-weight: 600; }
+  .inc span { color: var(--ink-soft); font-size: 0.88rem; }
+
+  /* ---------- footer cta ---------- */
+  .cta-band {
+    margin: clamp(30px, 6vw, 60px) 0 0;
+    background: var(--band-bg);
+    border-radius: 22px;
+    padding: clamp(34px, 6vw, 60px);
+    color: var(--band-ink);
+    display: grid;
+    grid-template-columns: 1.2fr auto;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 720px) { .cta-band { grid-template-columns: 1fr; text-align: left; } }
+  .cta-band h2 { color: var(--band-ink); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
+  .cta-band p { color: var(--band-ink-soft); margin-top: 10px; max-width: 44ch; }
+
+  footer {
+    padding: 26px 0 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <div class="brand">Motore Instagram <small>by Alessio Arrigoni</small></div>
+    <a class="nav-cta" href="#prezzi">Vedi i prezzi ↓</a>
+  </nav>
+
+  <section class="hero">
+    <p class="eyebrow">Attivo su Instagram in automatico</p>
+    <h1>Il tuo Instagram<br>si aggiorna <em>da solo</em>.</h1>
+    <p class="lede">
+      Il motore guarda ogni foto, capisce cosa mostra e scrive la didascalia giusta per la
+      tua attività — poi pubblica da solo, ogni settimana, negli orari scelti. Il profilo
+      resta sempre vivo, senza che tu debba pensarci.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-whatsapp" href="https://wa.me/393441606349?text=Ciao%21%20Ho%20visto%20la%20pagina%20del%20Motore%20Instagram%20e%20vorrei%20maggiori%20informazioni." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.92 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.26 8.26 0 0 1 2.44 5.88c0 4.59-3.74 8.32-8.34 8.32a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.27-4.4c0-4.59 3.74-8.38 8.27-8.38m-4.6 4.8c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.05s.88 2.38 1 2.55c.13.16 1.7 2.72 4.2 3.71 2.08.83 2.5.66 2.95.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.45-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.77-1.86-.2-.48-.4-.42-.55-.43-.14 0-.3-.01-.46-.01Z"/></svg>
+        Scrivimi su WhatsApp
+      </a>
+      <span class="hero-note">Risposta di solito entro poche ore</span>
+    </div>
+  </section>
+
+  <section id="come-funziona">
+    <div class="section-head">
+      <p class="kicker">Come funziona</p>
+      <h2>Il profilo resta vivo, tu non fai nulla</h2>
+      <p>
+        Puoi anche non pubblicare mai nulla di tuo: ci pensa il motore. Se un giorno hai
+        qualcosa di bello da condividere, pubblica pure tu — il motore continua come se
+        nulla fosse.
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Legge ogni foto</h3>
+        <p>Guarda l'immagine o il video e capisce cosa racconta, prima ancora di scrivere una parola.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Scrive la didascalia giusta</h3>
+        <p>La costruisce sul tipo di attività, sul tono di voce e sugli hashtag scelti, tenendo conto di cosa hai già pubblicato — mai generica.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Pubblica da solo, sempre</h3>
+        <p>Foto o video, nei giorni e negli orari scelti — tenendo vivo e caldo il profilo per l'algoritmo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="prezzi">
+    <div class="section-head">
+      <p class="kicker">Prezzi</p>
+      <h2>Un piano per ogni ritmo di pubblicazione</h2>
+      <p>Più post a settimana, più il tuo profilo resta vivo. Prezzo fisso al mese, nessun costo per post pubblicato.</p>
+    </div>
+
+    <div class="ladder">
+      <div class="tier"><div class="bar" style="--fill:14%"><span></span></div><p class="freq"><b>1</b> post / sett.</p><p class="price">89<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier"><div class="bar" style="--fill:28%"><span></span></div><p class="freq"><b>2</b> post / sett.</p><p class="price">99<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier"><div class="bar" style="--fill:42%"><span></span></div><p class="freq"><b>3</b> post / sett.</p><p class="price">109<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier reco"><span class="flag">Consigliato</span><div class="bar" style="--fill:56%"><span></span></div><p class="freq"><b>4</b> post / sett.</p><p class="price">119<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier"><div class="bar" style="--fill:70%"><span></span></div><p class="freq"><b>5</b> post / sett.</p><p class="price">129<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier"><div class="bar" style="--fill:84%"><span></span></div><p class="freq"><b>6</b> post / sett.</p><p class="price">139<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier"><div class="bar" style="--fill:100%"><span></span></div><p class="freq"><b>7</b> post / sett.</p><p class="price">149<sup>€</sup></p><p class="per">al mese</p></div>
+    </div>
+    <p class="ladder-note">Scorri per vedere tutti i piani →</p>
+
+    <div class="includes">
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Didascalie su misura</b><span>Scritte guardando davvero la foto, nel tono della tua attività e in base a cosa hai già pubblicato.</span></div>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Nessuna password richiesta</b><span>Autorizzazione ufficiale Instagram, mai le tue credenziali.</span></div>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Giorni e orari a scelta</b><span>Decidi tu il calendario di pubblicazione.</span></div>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Sospendi quando vuoi</b><span>Metti in pausa o annulla il servizio in qualsiasi momento, senza vincoli.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div>
+      <h2>Proviamolo sul tuo profilo.</h2>
+      <p>Scrivimi su WhatsApp: in pochi minuti capiamo insieme qual è il piano giusto per te.</p>
+    </div>
+    <a class="btn-whatsapp" href="https://wa.me/393441606349?text=Ciao%21%20Ho%20visto%20la%20pagina%20del%20Motore%20Instagram%20e%20vorrei%20maggiori%20informazioni." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.92 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.26 8.26 0 0 1 2.44 5.88c0 4.59-3.74 8.32-8.34 8.32a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.27-4.4c0-4.59 3.74-8.38 8.27-8.38m-4.6 4.8c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.05s.88 2.38 1 2.55c.13.16 1.7 2.72 4.2 3.71 2.08.83 2.5.66 2.95.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.45-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.77-1.86-.2-.48-.4-.42-.55-.43-.14 0-.3-.01-.46-.01Z"/></svg>
+      Scrivimi su WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    <span>Motore Instagram — gestito da Alessio Arrigoni</span>
+    <span>Pagina di presentazione, uso interno</span>
+  </footer>
+</div>
+</body>
+</html>
