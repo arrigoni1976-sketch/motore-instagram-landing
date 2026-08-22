@@ -300,6 +300,24 @@
   }
   .tier .price sup { font-size: 0.85rem; font-weight: 500; margin-left: 2px; }
   .tier .per { font-size: 0.72rem; color: var(--ink-soft); margin-top: -8px; }
+  .tier .subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px 6px;
+    border-radius: 100px;
+    background: var(--blue);
+    color: var(--card);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.15s ease;
+  }
+  .tier .subscribe:hover { background: var(--blue-deep); }
+  .tier .subscribe:focus-visible { outline: 2px solid var(--blue-deep); outline-offset: 2px; }
   .tier.reco { border-color: var(--blue); background: linear-gradient(180deg, var(--card), var(--sand-deep)); }
   .tier .flag {
     position: absolute;
@@ -428,13 +446,13 @@
     </div>
 
     <div class="ladder">
-      <div class="tier"><div class="bar" style="--fill:14%"><span></span></div><p class="freq"><b>1</b> post / sett.</p><p class="price">89<sup>€</sup></p><p class="per">al mese</p></div>
-      <div class="tier"><div class="bar" style="--fill:28%"><span></span></div><p class="freq"><b>2</b> post / sett.</p><p class="price">99<sup>€</sup></p><p class="per">al mese</p></div>
-      <div class="tier"><div class="bar" style="--fill:42%"><span></span></div><p class="freq"><b>3</b> post / sett.</p><p class="price">109<sup>€</sup></p><p class="per">al mese</p></div>
-      <div class="tier reco"><span class="flag">Consigliato</span><div class="bar" style="--fill:56%"><span></span></div><p class="freq"><b>4</b> post / sett.</p><p class="price">119<sup>€</sup></p><p class="per">al mese</p></div>
-      <div class="tier"><div class="bar" style="--fill:70%"><span></span></div><p class="freq"><b>5</b> post / sett.</p><p class="price">159<sup>€</sup></p><p class="per">al mese</p></div>
-      <div class="tier"><div class="bar" style="--fill:84%"><span></span></div><p class="freq"><b>6</b> post / sett.</p><p class="price">169<sup>€</sup></p><p class="per">al mese</p></div>
-      <div class="tier"><div class="bar" style="--fill:100%"><span></span></div><p class="freq"><b>7</b> post / sett.</p><p class="price">179<sup>€</sup></p><p class="per">al mese</p></div>
+      <div class="tier"><div class="bar" style="--fill:14%"><span></span></div><p class="freq"><b>1</b> post / sett.</p><p class="price">89<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/9B6aEX726ak95NWarDdby00" target="_blank" rel="noopener">Abbonati</a></div>
+      <div class="tier"><div class="bar" style="--fill:28%"><span></span></div><p class="freq"><b>2</b> post / sett.</p><p class="price">99<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/bJe9ATfyC1NDfowbvHdby01" target="_blank" rel="noopener">Abbonati</a></div>
+      <div class="tier"><div class="bar" style="--fill:42%"><span></span></div><p class="freq"><b>3</b> post / sett.</p><p class="price">109<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/dRm5kD9aefEtfowgQ1dby02" target="_blank" rel="noopener">Abbonati</a></div>
+      <div class="tier reco"><span class="flag">Consigliato</span><div class="bar" style="--fill:56%"><span></span></div><p class="freq"><b>4</b> post / sett.</p><p class="price">119<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/00wbJ1euyeApfow9nzdby03" target="_blank" rel="noopener">Abbonati</a></div>
+      <div class="tier"><div class="bar" style="--fill:70%"><span></span></div><p class="freq"><b>5</b> post / sett.</p><p class="price">159<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/4gM14n86a4ZP1xGarDdby04" target="_blank" rel="noopener">Abbonati</a></div>
+      <div class="tier"><div class="bar" style="--fill:84%"><span></span></div><p class="freq"><b>6</b> post / sett.</p><p class="price">169<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/14A7sLdqu8c15NWgQ1dby05" target="_blank" rel="noopener">Abbonati</a></div>
+      <div class="tier"><div class="bar" style="--fill:100%"><span></span></div><p class="freq"><b>7</b> post / sett.</p><p class="price">179<sup>€</sup></p><p class="per">al mese</p><a class="subscribe" href="https://buy.stripe.com/28E7sLcmqcsh5NW8jvdby06" target="_blank" rel="noopener">Abbonati</a></div>
     </div>
     <p class="ladder-note">Scorri per vedere tutti i piani →</p>
 
