@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B8%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -100,22 +100,10 @@
     padding-top: 28px;
     padding-bottom: 8px;
   }
-  .brand {
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-    letter-spacing: 0.01em;
-    display: flex;
-    align-items: baseline;
-    gap: 0.4em;
-  }
-  .brand small {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 500;
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+  .brand-mark {
+    display: block;
+    height: clamp(39px, 7.5vw, 51px);
+    width: auto;
   }
   .nav-cta {
     font-size: 0.85rem;
@@ -388,7 +376,7 @@
 <body>
 <div class="wrap">
   <nav class="nav">
-    <div class="brand">Motore Instagram <small>by Alessio Arrigoni</small></div>
+    <img class="brand-mark" src="logo.png" alt="Motore Instagram">
     <a class="nav-cta" href="#prezzi">Vedi i prezzi ↓</a>
   </nav>
 
