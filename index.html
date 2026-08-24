@@ -240,6 +240,39 @@
   .step h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 8px; }
   .step p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
 
+  /* ---------- chi c'e dietro ---------- */
+  .about {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 780px) { .about { grid-template-columns: 1fr; } }
+  .about > p {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    margin: 0 0 14px;
+  }
+  .about > p:last-child { margin-bottom: 0; }
+  .about-card {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 18px 4px 18px;
+    padding: 24px 26px;
+  }
+  .about-card h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin: 0 0 10px;
+  }
+  .about-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
   /* ---------- pricing ---------- */
   .ladder {
     display: flex;
@@ -353,6 +386,47 @@
   .inc b { display: block; color: var(--ink); font-weight: 600; }
   .inc span { color: var(--ink-soft); font-size: 0.88rem; }
 
+  /* ---------- faq ---------- */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 14px 4px 4px;
+    padding: 0 20px;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 17px 0;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--blue);
+    flex: none;
+    transition: transform 0.2s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0 0 18px;
+    padding-right: 30px;
+  }
+
   /* ---------- footer cta ---------- */
   .cta-band {
     margin: clamp(30px, 6vw, 60px) 0 0;
@@ -437,6 +511,36 @@
     </div>
   </section>
 
+  <section id="chi-c-e-dietro">
+    <div class="section-head">
+      <p class="kicker">Chi c'è dietro</p>
+      <h2>Non un algoritmo anonimo. Un fotografo, con un motore.</h2>
+    </div>
+    <div class="about">
+      <div>
+        <p>
+          Motore Instagram è costruito e seguito da un piccolo staff di professionisti,
+          guidato da Alessio Arrigoni, fotografo e videomaker. Non è un servizio "tutto
+          intelligenza artificiale" gestito da nessuno: ogni cliente viene configurato a
+          mano, e il motore lavora sopra contenuti veri — le tue foto, i tuoi video — non
+          immagini inventate.
+        </p>
+        <p>
+          In fase di configurazione chiediamo anche l'indirizzo del tuo sito, se ce l'hai
+          (facoltativo): aiuta a scrivere una descrizione più precisa della tua attività.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>Ti serve anche il contenuto?</h3>
+        <p>
+          Su richiesta, il nostro staff crea foto, video e testi professionali per il tuo
+          profilo — un servizio a parte, pensato per chi vuole partire con materiale nuovo o
+          rinfrescare il proprio archivio prima di lasciare che il motore faccia il resto.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section id="prezzi">
     <div class="section-head">
       <p class="kicker">Prezzi</p>
@@ -474,6 +578,51 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         <div><b>Sospendi quando vuoi</b><span>Metti in pausa o annulla il servizio in qualsiasi momento, senza vincoli.</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="domande">
+    <div class="section-head">
+      <p class="kicker">Domande frequenti</p>
+      <h2>Quello che chiedono più spesso</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Devo creare io i contenuti da pubblicare?</summary>
+        <p>No. Carichi le foto e i video nella cartella Drive quando vuoi, anche tutti insieme all'inizio: il motore pubblica in ordine, seguendo la lista dei file nella cartella, nei giorni e negli orari che hai scelto. Se vuoi cambiare l'ordine di pubblicazione, ti basta rinominare i file.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Chi scrive le didascalie?</summary>
+        <p>Il motore, guardando davvero ogni foto o video e tenendo conto del tipo di attività, del tono di voce e di cosa hai già pubblicato. Puoi comunque rivedere e correggere ogni didascalia in autonomia, in qualsiasi momento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Perché contenuti reali e non generati interamente dall'intelligenza artificiale?</summary>
+        <p>Perché raccontano davvero la tua attività, e i profili funzionano meglio così: Instagram tende a penalizzare la visibilità dei contenuti creati interamente con l'IA, oltre al fatto che un contenuto vero comunica più fiducia a chi guarda.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Chi c'è dietro Motore Instagram?</summary>
+        <p>Un piccolo staff di professionisti, guidato da Alessio Arrigoni, fotografo e videomaker. Non è un servizio anonimo: ogni cliente viene seguito e configurato a mano, non solo da un algoritmo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Posso chiedere anche foto e video professionali?</summary>
+        <p>Sì, su richiesta e con un costo a parte: siamo uno staff di professionisti e possiamo fornirti un servizio di creazione contenuti — foto, video e testi — da dare in pasto al motore, se non ne hai già a sufficienza.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Devo gestire io il profilo giorno per giorno?</summary>
+        <p>No, ci pensa il motore in autonomia, nei giorni e negli orari che hai scelto in fase di configurazione — tu puoi anche non aprire mai Instagram.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Serve dare la password di Instagram?</summary>
+        <p>No, mai. L'autorizzazione avviene solo tramite login ufficiale Meta/Instagram: le tue credenziali non vengono mai richieste né conservate.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Sono vincolato a un contratto o a una durata minima?</summary>
+        <p>No. Nessun vincolo, nessuna penale: puoi sospendere o disdire l'abbonamento quando vuoi, direttamente da qui o scrivendomi su WhatsApp.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Perché mi chiedete l'indirizzo del sito web?</summary>
+        <p>È facoltativo: se lo hai, aiuta a scrivere una descrizione della tua attività più precisa in fase di configurazione, così le didascalie sono coerenti fin da subito.</p>
+      </details>
     </div>
   </section>
 
