@@ -479,7 +479,7 @@
         </div>
         <div class="field">
           <label for="website">Sito web <span class="opt">(facoltativo)</span></label>
-          <input type="url" id="website" placeholder="https://www.iltuosito.it">
+          <input type="text" id="website" placeholder="www.iltuosito.it">
         </div>
         <div class="field-row">
           <div class="field">
@@ -584,6 +584,11 @@
     return el ? el.value.trim() : "";
   }
 
+  function normalizeUrl(value) {
+    if (!value) return "";
+    return /^https?:\/\//i.test(value) ? value : "https://" + value;
+  }
+
   function selectedDays() {
     var buttons = document.querySelectorAll(".day-btn.active");
     var labels = [];
@@ -604,7 +609,7 @@
     lines.push("");
     lines.push("LA MIA ATTIVITA");
     lines.push("Tipo di attività: " + (fieldValue("business-type") || "—"));
-    if (fieldValue("website")) lines.push("Sito web: " + fieldValue("website"));
+    if (fieldValue("website")) lines.push("Sito web: " + normalizeUrl(fieldValue("website")));
     lines.push("Tono di voce: " + (fieldValue("tone") || "—"));
     lines.push("Pubblico target: " + (fieldValue("audience") || "—"));
     if (fieldValue("hashtags")) lines.push("Hashtag fissi: " + fieldValue("hashtags"));
