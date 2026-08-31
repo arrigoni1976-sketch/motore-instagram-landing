@@ -395,6 +395,38 @@
   .inc b { display: block; color: var(--ink); font-weight: 600; }
   .inc span { color: var(--ink-soft); font-size: 0.88rem; }
 
+  /* ---------- focus su misura ---------- */
+  .focus-box {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-left: 3px solid var(--blue);
+    border-radius: 4px 20px 4px 4px;
+    padding: clamp(24px, 4vw, 34px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .focus-box .copy { flex: 1 1 380px; }
+  .focus-box h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin: 0 0 10px;
+  }
+  .focus-box p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+  }
+  .focus-box .price-tag {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    color: var(--blue-deep);
+  }
+
   /* ---------- faq ---------- */
   .faq-list {
     display: flex;
@@ -597,6 +629,24 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         <div><b>Sospendi quando vuoi</b><span>Metti in pausa o annulla il servizio in qualsiasi momento, senza vincoli.</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="focus-su-misura">
+    <div class="section-head">
+      <p class="kicker">Un servizio in più</p>
+      <h2>Vuoi spostare l'attenzione su qualcosa di preciso?</h2>
+      <p>Il motore scrive seguendo il profilo di brand impostato insieme. Se per un periodo vuoi dare più peso a un servizio, a un pubblico diverso o a un obiettivo del momento, puoi chiedermelo.</p>
+    </div>
+    <div class="focus-box">
+      <div class="copy">
+        <h3>Richiedi un cambio di argomento o obiettivo</h3>
+        <p>Scrivimi su WhatsApp cosa vuoi cambiare — aggiorno io il profilo di brand del motore di conseguenza. Costo <span class="price-tag">50€</span> una tantum: resta uno strumento pensato per le occasioni che contano davvero, non per cambi ogni settimana.</p>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/393441606349?text=Ciao%21%20Vorrei%20richiedere%20un%20cambio%20di%20argomento%2Fobiettivo%20per%20la%20mia%20comunicazione." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.92 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.93 2.46a8.26 8.26 0 0 1 2.44 5.88c0 4.59-3.74 8.32-8.34 8.32a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.27-4.4c0-4.59 3.74-8.38 8.27-8.38m-4.6 4.8c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.05s.88 2.38 1 2.55c.13.16 1.7 2.72 4.2 3.71 2.08.83 2.5.66 2.95.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.45-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.77-1.86-.2-.48-.4-.42-.55-.43-.14 0-.3-.01-.46-.01Z"/></svg>
+        Richiedi una modifica
+      </a>
     </div>
   </section>
 
