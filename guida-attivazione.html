@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida all'attivazione — Motore Instagram</title>
+<meta name="description" content="Come attivare il tuo Motore Instagram: cartelle Drive, informazioni sull'attività, dati di fatturazione, pagamenti e gestione abbonamento.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sand: #f3ecdd;
+    --sand-deep: #e6d9bf;
+    --sand-line: #d8c8a4;
+    --ink: #26323c;
+    --ink-soft: #5c6d77;
+    --blue: #3e6b85;
+    --blue-deep: #24404f;
+    --blue-soft: #6f97ab;
+    --card: #faf6ec;
+    --whatsapp: #25d366;
+    --whatsapp-ink: #0c3d22;
+    --shadow: 38, 30, 14;
+    --amber: #8a5a1f;
+    --amber-bg: #f6ecd8;
+    --amber-line: #dcc48f;
+    --band-bg: #24404f;
+    --band-ink: #f3ecdd;
+    --band-ink-soft: rgba(243, 236, 221, 0.72);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sand: #1c2530;
+      --sand-deep: #141b24;
+      --sand-line: #33404c;
+      --ink: #ede4d2;
+      --ink-soft: #a7b3bb;
+      --blue: #86b3c9;
+      --blue-deep: #cfe2ea;
+      --blue-soft: #4f7185;
+      --card: #212b37;
+      --whatsapp: #2fe07a;
+      --whatsapp-ink: #06210f;
+      --shadow: 0, 0, 0;
+      --amber: #e4c076;
+      --amber-bg: #2c2416;
+      --amber-line: #5c4a24;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --sand: #1c2530;
+    --sand-deep: #141b24;
+    --sand-line: #33404c;
+    --ink: #ede4d2;
+    --ink-soft: #a7b3bb;
+    --blue: #86b3c9;
+    --blue-deep: #cfe2ea;
+    --blue-soft: #4f7185;
+    --card: #212b37;
+    --whatsapp: #2fe07a;
+    --whatsapp-ink: #06210f;
+    --shadow: 0, 0, 0;
+    --amber: #e4c076;
+    --amber-bg: #2c2416;
+    --amber-line: #5c4a24;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--sand);
+    background-image: radial-gradient(circle at 1px 1px, rgba(var(--shadow), 0.05) 1px, transparent 0);
+    background-size: 22px 22px;
+    color: var(--ink);
+    font-family: "Work Sans", system-ui, sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--blue-deep); }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 56px) clamp(20px, 5vw, 40px) 90px;
+  }
+
+  .kicker {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    margin: 0 0 clamp(28px, 5vw, 40px);
+    max-width: 56ch;
+  }
+
+  /* ---------- indice ---------- */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 18px 4px 4px;
+    padding: 20px 24px;
+    margin-bottom: clamp(36px, 6vw, 56px);
+  }
+  .toc p.label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 12px;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 1.3em;
+  }
+  .toc li { margin-bottom: 8px; }
+  .toc a { font-size: 0.92rem; font-weight: 500; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ---------- sezioni ---------- */
+  section { margin: clamp(40px, 7vw, 64px) 0; scroll-margin-top: 20px; }
+  section:first-of-type { margin-top: 0; }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--blue-deep);
+    color: var(--card);
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    flex: none;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin: 0;
+  }
+
+  h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin: 1.3em 0 0.4em;
+  }
+  h3:first-child { margin-top: 0; }
+
+  p { margin: 0 0 1em; color: var(--ink); }
+  p.soft { color: var(--ink-soft); }
+  p.tight { margin-bottom: 0.4em; }
+
+  ol.substeps {
+    margin: 0 0 1.2em;
+    padding-left: 1.3em;
+  }
+  ol.substeps li { margin-bottom: 0.6em; }
+  ol.substeps li::marker { color: var(--blue); font-weight: 700; }
+
+  ul.checklist { list-style: none; margin: 0 0 1.2em; padding: 0; }
+  ul.checklist li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+  ul.checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 3px;
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid var(--blue-soft);
+    background: var(--card);
+  }
+  ul.checklist li::after {
+    content: "";
+    position: absolute;
+    left: 5px; top: 7px;
+    width: 8px; height: 4px;
+    border-left: 2px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
+    transform: rotate(-45deg);
+  }
+  ul.checklist b { color: var(--ink); }
+
+  .callout {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-left: 3px solid var(--blue);
+    border-radius: 4px 16px 4px 4px;
+    padding: 18px 20px;
+    margin: 1.4em 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .warn {
+    background: var(--amber-bg);
+    border: 1px solid var(--amber-line);
+    border-left: 3px solid var(--amber);
+    border-radius: 4px 16px 4px 4px;
+    padding: 16px 20px;
+    margin: 1.4em 0;
+    font-size: 0.94rem;
+  }
+  .warn strong { color: var(--amber); }
+  .warn p:last-child { margin-bottom: 0; }
+
+  .link-row { margin: 1.2em 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: var(--blue);
+    color: var(--card);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn:hover { background: var(--blue-deep); }
+  .btn-whatsapp { background: var(--whatsapp); color: var(--whatsapp-ink); }
+  .btn-whatsapp:hover { background: var(--whatsapp); opacity: 0.9; }
+
+  code {
+    background: var(--sand-deep);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+  }
+
+  /* ---------- riepilogo "come funziona" ---------- */
+  .summary-grid { display: flex; flex-direction: column; gap: 4px; }
+  .summary-item { padding: 14px 0; border-bottom: 1px solid var(--sand-line); }
+  .summary-item:last-child { border-bottom: none; }
+  .summary-item h3 { margin: 0 0 4px; }
+  .summary-item p { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 6px; }
+  .summary-item a.inline-link { font-size: 0.88rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .summary-item a.inline-link:hover { text-decoration: underline; }
+
+  /* ---------- pannello / modulo ---------- */
+  .panel-card {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 18px 4px 18px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+  }
+  .field { margin-bottom: 16px; }
+  .field:last-child { margin-bottom: 0; }
+  .field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .field .opt { font-weight: 400; color: var(--ink-soft); text-transform: none; letter-spacing: 0; }
+  .field input, .field textarea {
+    width: 100%;
+    border: 1px solid var(--sand-line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 0.92rem;
+    color: var(--ink);
+    background: var(--sand);
+  }
+  .field textarea { resize: vertical; min-height: 84px; }
+  .field input:focus, .field textarea:focus {
+    outline: 2px solid var(--blue);
+    outline-offset: 1px;
+    border-color: var(--blue);
+  }
+  .field-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .field-row .field { flex: 1 1 200px; }
+
+  .day-toggle { display: flex; flex-wrap: wrap; gap: 8px; }
+  .day-btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--sand-line);
+    background: var(--sand);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .day-btn.active { background: var(--blue-deep); border-color: var(--blue-deep); color: var(--card); }
+
+  .send-box {
+    background: var(--band-bg);
+    border-radius: 22px;
+    padding: clamp(24px, 5vw, 34px);
+    color: var(--band-ink);
+    text-align: center;
+  }
+  .send-box p { color: var(--band-ink-soft); margin: 0 0 18px; font-size: 0.92rem; }
+  .send-box .btn-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .send-box .btn-email {
+    background: transparent;
+    border: 1px solid rgba(243,236,221,0.4);
+    color: var(--band-ink);
+  }
+  .send-box .btn-email:hover { background: rgba(243,236,221,0.08); }
+  .send-box .copy-link {
+    display: block;
+    margin: 16px auto 0;
+    background: none;
+    border: none;
+    color: var(--band-ink-soft);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .send-box .copy-link:hover { color: var(--band-ink); }
+
+  footer {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Motore Instagram — guida per iniziare</p>
+  <h1>Come attivare il tuo Motore Instagram</h1>
+  <p class="lede">
+    Due cose da fare: preparare due cartelle Google Drive, e compilare il modulo qui in fondo con
+    tutte le informazioni che mi servono. Fatto questo, con un tasto me lo mandi già pronto e
+    parto con la configurazione.
+  </p>
+
+  <nav class="toc">
+    <p class="label">In questa pagina</p>
+    <ol>
+      <li><a href="#drive">1. Le cartelle Google Drive</a></li>
+      <li><a href="#come-funziona">2. Come funziona, in breve</a></li>
+      <li><a href="#pannello">3. Compila e inviami tutto</a></li>
+    </ol>
+  </nav>
+
+  <section id="drive">
+    <div class="section-head">
+      <span class="step-num">1</span>
+      <h2>Le cartelle Google Drive</h2>
+    </div>
+    <p>Il motore lavora su due cartelle Google Drive separate, da creare tu su <a href="https://drive.google.com" target="_blank" rel="noopener">drive.google.com</a>:</p>
+    <ul class="checklist">
+      <li><b>Cartella sorgente</b> — qui carichi le foto e i video che vuoi pubblicare. Il motore pesca da qui, dal contenuto più vecchio caricato al più recente. Il nome del file non conta: puoi chiamarli come vuoi.</li>
+      <li><b>Cartella "Pubblicati"</b> — resta vuota all'inizio. Il motore ci sposta da solo ogni contenuto dopo averlo pubblicato, così tieni traccia di cosa è già uscito.</li>
+    </ul>
+    <ol class="substeps">
+      <li>Su Drive, clicca <b>Nuovo → Cartella</b>, dai un nome (es. "Instagram da pubblicare") e crea.</li>
+      <li>Ripeti per la seconda cartella (es. "Instagram pubblicati").</li>
+      <li>Su ciascuna cartella, tasto destro → <b>Condividi</b> → aggiungi come utente <code>arrigoni1976@gmail.com</code> con permesso <b>Editor</b>.</li>
+      <li>Sempre da <b>Condividi</b>, copia il link della cartella (bottone "Copia link") — ti servirà per il modulo qui sotto.</li>
+    </ol>
+    <div class="warn">
+      <p><strong>Importante:</strong> le due cartelle devono essere diverse tra loro. Se usi la stessa cartella sia come sorgente che come "Pubblicati", il motore rischia di ripubblicare sempre lo stesso contenuto.</p>
+    </div>
+    <p class="soft">Vuoi pubblicare più foto insieme come carosello? Rinominale tu, prima di caricarle, con lo stesso nome seguito da una lettera finale diversa per ciascuna (es. <code>evento_A</code>, <code>evento_B</code>, <code>evento_C</code>).</p>
+  </section>
+
+  <section id="come-funziona">
+    <div class="section-head">
+      <span class="step-num">2</span>
+      <h2>Come funziona, in breve</h2>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <h3>Contenuti reali, niente IA</h3>
+        <p>Carica foto o video veri della tua attività: funzionano meglio dei contenuti generati con l'intelligenza artificiale.</p>
+      </div>
+      <div class="summary-item">
+        <h3>Orari di pubblicazione</h3>
+        <p>Il motore è attivo tra le 7:00 e le 20:00: nel modulo qui sotto scegli giorni e fascia oraria in questo intervallo.</p>
+      </div>
+      <div class="summary-item">
+        <h3>Autorizzazione Instagram</h3>
+        <p>Non chiedo mai la password. Dopo aver ricevuto il modulo, attivo il profilo dal mio pannello: il motore genera un link ufficiale Meta che ti giro per autorizzare l'accesso, da completare entro 10 minuti dall'invio.</p>
+      </div>
+      <div class="summary-item">
+        <h3>Pagamenti</h3>
+        <p>Abbonamento mensile ricorrente gestito tramite Stripe: non vedo né conservo mai i dati della tua carta.</p>
+        <a class="inline-link" href="https://motore.alessioarrigoni.com/index.html#prezzi" target="_blank" rel="noopener">Vedi i piani e i prezzi →</a>
+      </div>
+      <div class="summary-item">
+        <h3>Gestire l'abbonamento</h3>
+        <p>Puoi mettere in pausa o disdire quando vuoi, in autonomia, senza passare da me.</p>
+        <a class="inline-link" href="https://pannello.alessioarrigoni.com/gestisci-abbonamento" target="_blank" rel="noopener">Gestisci il tuo abbonamento →</a>
+      </div>
+      <div class="summary-item">
+        <h3>Cambiare argomento o obiettivo</h3>
+        <p>Per un periodo puoi chiedere di spostare l'attenzione su qualcosa di preciso (50€ una tantum, pensato per le occasioni che contano, non per cambi ogni settimana).</p>
+        <a class="inline-link" href="https://pannello.alessioarrigoni.com/richiedi-modifica" target="_blank" rel="noopener">Richiedi una modifica →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pannello">
+    <div class="section-head">
+      <span class="step-num">3</span>
+      <h2>Compila e inviami tutto</h2>
+    </div>
+    <p class="soft">Riempi i campi con calma, poi premi il tasto in fondo: ti preparo già il messaggio pronto da mandarmi.</p>
+
+    <form id="recap-form">
+      <div class="panel-card">
+        <h3>Il tuo profilo Instagram</h3>
+        <div class="field">
+          <label for="ig-profile">Nome utente o link del profilo</label>
+          <input type="text" id="ig-profile" required placeholder="@iltuoprofilo oppure https://instagram.com/iltuoprofilo">
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <h3>Cartelle Drive</h3>
+        <div class="field">
+          <label for="drive-source">Link cartella sorgente</label>
+          <input type="url" id="drive-source" required placeholder="Incolla qui il link della cartella sorgente...">
+        </div>
+        <div class="field">
+          <label for="drive-published">Link cartella "Pubblicati"</label>
+          <input type="url" id="drive-published" required placeholder="Incolla qui il link della cartella &quot;Pubblicati&quot;...">
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <h3>La tua attività</h3>
+        <div class="field">
+          <label for="business-type">Tipo di attività</label>
+          <textarea id="business-type" required placeholder="Cosa fai, come ti distingui, per chi lavori..."></textarea>
+        </div>
+        <div class="field">
+          <label for="website">Sito web <span class="opt">(facoltativo)</span></label>
+          <input type="url" id="website" placeholder="https://www.iltuosito.it">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="tone">Tono di voce</label>
+            <input type="text" id="tone" required placeholder="Es. informale e diretto">
+          </div>
+          <div class="field">
+            <label for="audience">Pubblico target</label>
+            <input type="text" id="audience" required placeholder="A chi ti rivolgi">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="hashtags">Hashtag fissi <span class="opt">(facoltativo)</span></label>
+            <input type="text" id="hashtags" placeholder="#tuobrand #tuacittà">
+          </div>
+          <div class="field">
+            <label for="avoid">Cose da evitare <span class="opt">(facoltativo)</span></label>
+            <input type="text" id="avoid" placeholder="Temi o toni da non usare">
+          </div>
+        </div>
+        <div class="field">
+          <label for="language">Lingua delle didascalie</label>
+          <input type="text" id="language" placeholder="italiano">
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <h3>Calendario</h3>
+        <p class="soft tight">Seleziona qui i giorni e l'orario in cui vorresti pubblicare — scegli 1, 2, 3 o più giorni in base al piano che hai scelto (quanti post a settimana).</p>
+        <div class="field">
+          <label>Giorni di pubblicazione</label>
+          <div class="day-toggle">
+            <button type="button" class="day-btn" data-label="Lun">Lun</button>
+            <button type="button" class="day-btn" data-label="Mar">Mar</button>
+            <button type="button" class="day-btn" data-label="Mer">Mer</button>
+            <button type="button" class="day-btn" data-label="Gio">Gio</button>
+            <button type="button" class="day-btn" data-label="Ven">Ven</button>
+            <button type="button" class="day-btn" data-label="Sab">Sab</button>
+            <button type="button" class="day-btn" data-label="Dom">Dom</button>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="time-from">Dalle <span class="opt">(non prima delle 7:00)</span></label>
+            <input type="time" id="time-from" min="07:00" max="20:00" value="09:00">
+          </div>
+          <div class="field">
+            <label for="time-to">Alle <span class="opt">(non oltre le 20:00)</span></label>
+            <input type="time" id="time-to" min="07:00" max="20:00" value="19:00">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <h3>Dati per la fatturazione</h3>
+        <div class="field">
+          <label for="billing-name">Intestazione società / ditta / persona fisica</label>
+          <input type="text" id="billing-name" required>
+        </div>
+        <div class="field">
+          <label for="billing-address">Indirizzo completo</label>
+          <input type="text" id="billing-address" required placeholder="Via, numero civico, CAP, città, provincia">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="billing-piva">Partita IVA</label>
+            <input type="text" id="billing-piva">
+          </div>
+          <div class="field">
+            <label for="billing-cf">Codice fiscale</label>
+            <input type="text" id="billing-cf">
+          </div>
+        </div>
+        <div class="field">
+          <label for="billing-sdi">ID per la fatturazione elettronica <span class="opt">(Codice destinatario o PEC)</span></label>
+          <input type="text" id="billing-sdi">
+        </div>
+        <div class="field">
+          <label for="billing-email">Email per la fatturazione</label>
+          <input type="email" id="billing-email" required>
+        </div>
+      </div>
+
+      <div class="send-box">
+        <h3 style="color: var(--band-ink);">Tutto pronto?</h3>
+        <div class="btn-row">
+          <button type="submit" id="send-whatsapp" class="btn btn-whatsapp">Invia su WhatsApp →</button>
+          <button type="button" id="send-email" class="btn btn-email">Invia via email</button>
+        </div>
+        <button type="button" id="copy-message" class="copy-link">Salva il messaggio →</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>Motore Instagram — Alessio Arrigoni</footer>
+</div>
+
+<script>
+  function fieldValue(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : "";
+  }
+
+  function selectedDays() {
+    var buttons = document.querySelectorAll(".day-btn.active");
+    var labels = [];
+    for (var i = 0; i < buttons.length; i++) labels.push(buttons[i].getAttribute("data-label"));
+    return labels.join(", ");
+  }
+
+  function buildMessage() {
+    var lines = [];
+    lines.push("Ciao Alessio, ecco le informazioni per attivare il Motore Instagram:");
+    lines.push("");
+    lines.push("PROFILO INSTAGRAM");
+    lines.push(fieldValue("ig-profile") || "—");
+    lines.push("");
+    lines.push("CARTELLE DRIVE");
+    lines.push("Sorgente: " + (fieldValue("drive-source") || "—"));
+    lines.push("Pubblicati: " + (fieldValue("drive-published") || "—"));
+    lines.push("");
+    lines.push("LA MIA ATTIVITA");
+    lines.push("Tipo di attività: " + (fieldValue("business-type") || "—"));
+    if (fieldValue("website")) lines.push("Sito web: " + fieldValue("website"));
+    lines.push("Tono di voce: " + (fieldValue("tone") || "—"));
+    lines.push("Pubblico target: " + (fieldValue("audience") || "—"));
+    if (fieldValue("hashtags")) lines.push("Hashtag fissi: " + fieldValue("hashtags"));
+    if (fieldValue("avoid")) lines.push("Cose da evitare: " + fieldValue("avoid"));
+    lines.push("Lingua didascalie: " + (fieldValue("language") || "italiano"));
+    lines.push("");
+    lines.push("CALENDARIO");
+    lines.push("Giorni: " + (selectedDays() || "—"));
+    lines.push("Fascia oraria: " + (fieldValue("time-from") || "—") + " - " + (fieldValue("time-to") || "—"));
+    lines.push("");
+    lines.push("FATTURAZIONE");
+    lines.push("Intestazione: " + (fieldValue("billing-name") || "—"));
+    lines.push("Indirizzo: " + (fieldValue("billing-address") || "—"));
+    lines.push("Partita IVA: " + (fieldValue("billing-piva") || "—"));
+    lines.push("Codice fiscale: " + (fieldValue("billing-cf") || "—"));
+    lines.push("ID fatturazione elettronica / PEC: " + (fieldValue("billing-sdi") || "—"));
+    lines.push("Email fatturazione: " + (fieldValue("billing-email") || "—"));
+    return lines.join("\n");
+  }
+
+  document.querySelectorAll(".day-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      btn.classList.toggle("active");
+    });
+  });
+
+  var form = document.getElementById("recap-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var msg = buildMessage();
+    window.open("https://wa.me/393441606349?text=" + encodeURIComponent(msg), "_blank");
+  });
+
+  document.getElementById("send-email").addEventListener("click", function () {
+    if (!form.reportValidity()) return;
+    var msg = buildMessage();
+    var subject = encodeURIComponent("Attivazione Motore Instagram");
+    window.location.href = "mailto:?subject=" + subject + "&body=" + encodeURIComponent(msg);
+  });
+
+  document.getElementById("copy-message").addEventListener("click", function () {
+    if (!form.reportValidity()) return;
+    var msg = buildMessage();
+    var btn = document.getElementById("copy-message");
+    navigator.clipboard.writeText(msg).then(function () {
+      var original = btn.textContent;
+      btn.textContent = "Copiato!";
+      setTimeout(function () { btn.textContent = original; }, 2000);
+    });
+  });
+</script>
+</body>
+</html>
