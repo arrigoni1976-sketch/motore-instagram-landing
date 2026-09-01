@@ -358,6 +358,27 @@
   }
   .send-box .copy-link:hover { color: var(--band-ink); }
 
+  .consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto 20px;
+    text-align: left;
+    font-size: 0.86rem;
+    color: var(--band-ink-soft);
+  }
+  .consent input[type="checkbox"] {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--whatsapp);
+    flex: none;
+    cursor: pointer;
+  }
+  .consent label { cursor: pointer; }
+  .consent a { color: var(--band-ink); font-weight: 700; text-decoration: underline; }
+
   footer {
     margin-top: 60px;
     font-size: 0.8rem;
@@ -566,6 +587,10 @@
 
       <div class="send-box">
         <h3 style="color: var(--band-ink);">Tutto pronto?</h3>
+        <div class="consent">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">Ho letto e accetto le <a href="condizioni.html" target="_blank" rel="noopener">condizioni del servizio</a>, comprensive dell'informativa sul trattamento dei dati personali.</label>
+        </div>
         <div class="btn-row">
           <button type="submit" id="send-whatsapp" class="btn btn-whatsapp">Invia su WhatsApp →</button>
           <button type="button" id="send-email" class="btn btn-email">Invia via email</button>
