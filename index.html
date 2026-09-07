@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="it">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motore Instagram — pubblicazione automatica per il tuo profilo</title>
-<meta name="description" content="Il tuo Instagram si aggiorna da solo: didascalie scritte su misura e pubblicazione automatica, ogni settimana, negli orari che scegli tu.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%B8%3C/text%3E%3C/svg%3E">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Motore Instagram</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
@@ -239,6 +233,52 @@
   }
   .step h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 8px; }
   .step p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* ---------- prova reale ---------- */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .proof-card {
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-radius: 4px 18px 4px 18px;
+    padding: 24px 22px 20px;
+  }
+  .proof-card .mark {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--blue-soft);
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .proof-card p.quote {
+    color: var(--ink);
+    font-size: 0.94rem;
+    margin: 0 0 14px;
+  }
+  .proof-card .src {
+    font-size: 0.76rem;
+    color: var(--blue);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .preview-note {
+    margin-top: 22px;
+    padding: 18px 22px;
+    background: var(--card);
+    border: 1px solid var(--sand-line);
+    border-left: 3px solid var(--blue);
+    border-radius: 4px 16px 4px 4px;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  .preview-note strong { color: var(--ink); }
 
   /* ---------- chi c'e dietro ---------- */
   .about {
@@ -524,11 +564,29 @@
   footer a:hover { text-decoration: underline; }
 </style>
 
-</head>
-<body>
 <div class="wrap">
   <nav class="nav">
-    <img class="brand-mark" src="logo.png" alt="Motore Instagram">
+    <svg class="brand-mark" viewBox="0 0 620 150" role="img" aria-label="Motore Instagram" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="igText" x1="0" y1="0" x2="1" y2="0.2">
+          <stop offset="0%" stop-color="#f7941d"/>
+          <stop offset="45%" stop-color="#ef2b70"/>
+          <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+        <linearGradient id="igRing" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f7941d"/>
+          <stop offset="55%" stop-color="#ef2b70"/>
+          <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+      </defs>
+      <text x="0" y="64" font-family="'Poppins', sans-serif" font-weight="800" font-size="60" letter-spacing="0.5" fill="var(--ink)">MOTORE</text>
+      <text x="2" y="126" font-family="'Poppins', sans-serif" font-weight="600" font-size="44" letter-spacing="5" fill="url(#igText)">INSTAGRAM</text>
+      <g transform="translate(462,5)">
+        <path d="M123.8,65.29 A54,54 0 1,1 114.24,38.03" fill="none" stroke="url(#igRing)" stroke-width="16" stroke-linecap="round"/>
+        <circle cx="122.6" cy="50.85" r="9" fill="#ef2b70"/>
+        <text x="70" y="70" font-family="'Poppins', sans-serif" font-weight="900" font-size="66" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">M</text>
+      </g>
+    </svg>
     <a class="nav-cta" href="#prezzi">Vedi i prezzi ↓</a>
   </nav>
 
@@ -568,12 +626,57 @@
       <div class="step">
         <span class="num">02</span>
         <h3>Scrive la didascalia giusta</h3>
-        <p>La costruisce sul tipo di attività, sul tono di voce e sugli hashtag scelti, tenendo conto di cosa hai già pubblicato — mai generica.</p>
+        <p>La costruisce sul tipo di attività, sul tono di voce e sugli hashtag scelti, alternando nel tempo racconto, lavoro, consigli e fino a due argomenti scelti da te — tenendo conto di cosa hai già pubblicato, mai generica.</p>
       </div>
       <div class="step">
         <span class="num">03</span>
         <h3>Pubblica da solo, sempre</h3>
-        <p>Foto o video, nei giorni e negli orari scelti — tenendo vivo e caldo il profilo per l'algoritmo.</p>
+        <p>Foto o video, nei giorni e negli orari scelti, anche in contemporanea su Facebook se vuoi — tenendo vivo e caldo il profilo per l'algoritmo.</p>
+      </div>
+    </div>
+    <p class="preview-note">
+      <strong>Vuoi vederlo prima che esca?</strong> Se preferisci, puoi attivare l'anteprima: ricevi
+      ogni post pronto prima della pubblicazione e decidi tu — lo approvi così com'è, correggi il
+      testo o chiedi al motore di riscriverlo da capo. Pubblica solo dopo il tuo via libera.
+    </p>
+  </section>
+
+  <section id="prova-reale">
+    <div class="section-head">
+      <p class="kicker">Non solo parole</p>
+      <h2>Uno stile che si adatta a qualsiasi attività</h2>
+      <p>
+        La maggior parte di questi esempi sono didascalie che il motore ha scritto davvero, prese
+        da profili che gestiamo in prima persona, in settori diversi tra loro; qualcuna è scritta
+        apposta per mostrarti come si adatterebbe alla tua attività. Nota come cambia il taglio da
+        un post all'altro — racconto, lavoro, consigli.
+      </p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <span class="mark">”</span>
+        <p class="quote">"Il silenzio della chiesa, la luce delle candele, un bacio che dura un istante e resta per sempre. Il bianco e nero racconta l'essenziale: due sguardi vicini, l'abito che si allarga sui gradini dell'altare, l'eco di una promessa appena pronunciata."</p>
+        <p class="src">Fotografo di matrimoni — Bilanciamento argomenti: racconto</p>
+      </div>
+      <div class="proof-card">
+        <span class="mark">”</span>
+        <p class="quote">"L'ingresso di casa che si apre subito su una cucina calda e luminosa: legno chiaro, dettagli su misura, luce naturale che arriva fino al piano cottura. Un colpo d'occhio che racconta bene quanto la prima impressione conti in un annuncio."</p>
+        <p class="src">Fotografo immobiliare — Bilanciamento argomenti: il tuo lavoro</p>
+      </div>
+      <div class="proof-card">
+        <span class="mark">”</span>
+        <p class="quote">"Un pennello per il fard, la luce naturale della stanza e gli ultimi ritocchi prima di uscire: il trucco sposa nasce proprio in questi momenti di calma. La prova trucco serve a capire come reagisce la pelle durante la giornata e come armonizzarla con acconciatura e abito."</p>
+        <p class="src">Portale matrimoni — Bilanciamento argomenti: consigli</p>
+      </div>
+      <div class="proof-card">
+        <span class="mark">”</span>
+        <p class="quote">"Il vapore che sale dal cappuccino appena montato, il cornetto ancora caldo, la luce del mattino che entra dalle vetrine su piazza XX Settembre: a Lecco la giornata giusta comincia sempre da qui. Miscela selezionata, latte montato al punto giusto, il tempo di gustarselo senza fretta prima della corsa in ufficio."</p>
+        <p class="src">Bar nel centro di Lecco — Bilanciamento argomenti: il tuo lavoro</p>
+      </div>
+      <div class="proof-card">
+        <span class="mark">”</span>
+        <p class="quote">"La testa tra le mani, il telefono che continua a vibrare, la lista inviti con più punti interrogativi che spunte e 132 messaggi ancora da leggere: chi sta organizzando una festa di compleanno si rispecchia in questa immagine. Le allergie da ricordare, il regalo già preso da qualcun altro, chi conferma e chi disdice all'ultimo: è per liberarvi da tutto questo che è nata Piky."</p>
+        <p class="src">App per organizzare feste — Bilanciamento argomenti: racconto</p>
       </div>
     </div>
   </section>
@@ -635,11 +738,19 @@
       </div>
       <div class="inc">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Argomenti sempre bilanciati</b><span>Il motore alterna il taglio delle didascalie — racconto, lavoro, consigli, più due argomenti a tua scelta — così il profilo non ripete sempre lo stesso tipo di post.</span></div>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         <div><b>Nessuna password richiesta</b><span>Autorizzazione ufficiale Instagram, mai le tue credenziali.</span></div>
       </div>
       <div class="inc">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         <div><b>Giorni e orari a scelta</b><span>Decidi tu il calendario di pubblicazione.</span></div>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Anche su Facebook, se vuoi</b><span>Ogni post pubblicato su Instagram può uscire in automatico anche sulla tua Pagina Facebook collegata.</span></div>
       </div>
       <div class="inc">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
@@ -682,6 +793,10 @@
       <details class="faq-item">
         <summary>Chi scrive le didascalie?</summary>
         <p>Il motore, guardando davvero ogni foto o video e tenendo conto del tipo di attività, del tono di voce e di cosa hai già pubblicato. Puoi comunque rivedere e correggere ogni didascalia in autonomia, in qualsiasi momento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Posso vedere il post prima che venga pubblicato?</summary>
+        <p>Sì, se lo richiedi: puoi attivare l'approvazione preventiva. In quel caso, prima di ogni pubblicazione ricevi un'anteprima del post che puoi approvare, correggere o far riscrivere — il motore pubblica solo dopo il tuo via libera.</p>
       </details>
       <details class="faq-item">
         <summary>Perché contenuti reali e non generati interamente dall'intelligenza artificiale?</summary>
@@ -730,5 +845,5 @@
     <a href="https://pannello.alessioarrigoni.com/gestisci-abbonamento" target="_blank" rel="noopener">Gestisci abbonamento</a>
   </footer>
 </div>
-</body>
-</html>
+
+</body></html>
