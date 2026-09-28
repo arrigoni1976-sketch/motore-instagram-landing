@@ -426,6 +426,7 @@
       <p><strong>Importante:</strong> le due cartelle devono essere diverse tra loro. Se usi la stessa cartella sia come sorgente che come "Pubblicati", il motore rischia di ripubblicare sempre lo stesso contenuto.</p>
     </div>
     <p class="soft">Vuoi pubblicare più foto insieme come carosello? Rinominale tu, prima di caricarle, con lo stesso nome seguito da una lettera finale diversa per ciascuna (es. <code>evento_A</code>, <code>evento_B</code>, <code>evento_C</code>).</p>
+    <p class="soft">C'è un contenuto che deve uscire prima degli altri (una novità dell'ultimo minuto, un'offerta a tempo)? Aggiungi la parola "urgente" davanti al nome del file prima di caricarlo (es. <code>urgente_offerta.jpg</code>): salta la fila normale, al prossimo giro utile.</p>
   </section>
 
   <section id="come-funziona">
@@ -461,6 +462,14 @@
         <p>Per un periodo puoi chiedere di spostare l'attenzione su qualcosa di preciso (50€ una tantum, pensato per le occasioni che contano, non per cambi ogni settimana).</p>
         <a class="inline-link" href="https://pannello.alessioarrigoni.com/richiedi-modifica" target="_blank" rel="noopener">Richiedi una modifica →</a>
       </div>
+      <div class="summary-item">
+        <h3>Contenuto urgente</h3>
+        <p>Se un file deve uscire prima degli altri, ti basta rinominarlo aggiungendo "urgente" davanti al nome (vedi sopra): salta la fila normale, al prossimo giro utile.</p>
+      </div>
+      <div class="summary-item">
+        <h3>Report mensile</h3>
+        <p>Se mi lasci la tua email di contatto qui sotto, ogni mese ricevi un riepilogo di come sono andati i tuoi post: like, commenti e qual è stato il migliore del mese.</p>
+      </div>
     </div>
   </section>
 
@@ -478,6 +487,11 @@
           <label for="ig-profile">Nome utente o link del profilo</label>
           <input type="text" id="ig-profile" required placeholder="@iltuoprofilo oppure https://instagram.com/iltuoprofilo">
         </div>
+        <div class="field">
+          <label for="contact-email">Email di contatto <span class="opt">(diversa da quella di fatturazione)</span></label>
+          <input type="email" id="contact-email" placeholder="la tua email">
+        </div>
+        <p class="soft tight">La uso per mandarti l'anteprima dei post se attivi l'approvazione, un avviso se la cartella contenuti resta vuota, e il report mensile con i numeri dei tuoi post. Consigliata anche se non attivi l'approvazione.</p>
       </div>
 
       <div class="panel-card">
@@ -627,6 +641,7 @@
     lines.push("");
     lines.push("PROFILO INSTAGRAM");
     lines.push(fieldValue("ig-profile") || "—");
+    lines.push("Email di contatto: " + (fieldValue("contact-email") || "—"));
     lines.push("");
     lines.push("CARTELLE DRIVE");
     lines.push("Sorgente: " + (fieldValue("drive-source") || "—"));
